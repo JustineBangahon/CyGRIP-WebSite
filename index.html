@@ -1,0 +1,2051 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CYGRIP CY2025 - Professional Tool Set</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="icon" type="image/png" href="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/CyGrip%20Logo-nHgPbrY3rkoRFzENUvmOgACT7eq6vQ.png">
+</head>
+<style>
+    /* Base Styles */
+:root {
+  --primary-color: #00a79d;
+  --primary-dark: #008c84;
+  --primary-light: #4fd5cd;
+  --secondary-color: #f7941d;
+  --secondary-dark: #e07c00;
+  --secondary-light: #ffb55c;
+  --dark-color: #2c3e50;
+  --text-color: #4a4a4a;
+  --light-color: #f8f9fa;
+  --white: #ffffff;
+  --gray: #6c757d;
+  --light-gray: #e9ecef;
+  --border-radius: 8px;
+  --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--white);
+  overflow-x: hidden;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+  z-index: 1;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 20px;
+  color: var(--dark-color);
+}
+
+h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+h2 {
+  font-size: 2.8rem;
+  text-align: center;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+h2 span {
+  color: var(--primary-color);
+  position: relative;
+}
+
+h2 span::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: var(--primary-color);
+  border-radius: 10px;
+}
+
+p {
+  margin-bottom: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary-color);
+  transition: var(--transition);
+}
+
+a:hover {
+  color: var(--secondary-color);
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+section {
+  padding: 100px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.section-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 60px;
+}
+
+.section-header p {
+  font-size: 1.1rem;
+  color: var(--gray);
+}
+
+.badge {
+  display: inline-block;
+  background-color: var(--secondary-color);
+  color: var(--white);
+  padding: 8px 16px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.btn-primary,
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 32px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: var(--transition);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: var(--white);
+  border: 2px solid var(--primary-color);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-dark);
+  border-color: var(--primary-dark);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 167, 157, 0.3);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+  box-shadow: 0 5px 10px rgba(0, 167, 157, 0.2);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+}
+
+.btn-secondary:hover {
+  background-color: var(--primary-color);
+  color: var(--white);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 167, 157, 0.3);
+}
+
+.btn-secondary:active {
+  transform: translateY(0);
+  box-shadow: 0 5px 10px rgba(0, 167, 157, 0.2);
+}
+
+.btn-primary i,
+.btn-secondary i {
+  margin-left: 10px;
+  transition: var(--transition);
+}
+
+.btn-primary:hover i,
+.btn-secondary:hover i {
+  transform: translateX(5px);
+}
+
+/* Header Styles */
+header {
+  background-color: var(--white);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 15px 0;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+  animation: rotate 10s linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.logo span {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  letter-spacing: 1px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+}
+
+.nav-links li {
+  margin-left: 30px;
+  position: relative;
+}
+
+.nav-links a {
+  color: var(--dark-color);
+  font-weight: 500;
+  position: relative;
+  padding: 5px 0;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--primary-color);
+  transition: var(--transition);
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.mobile-menu-btn {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 20px;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.mobile-menu-btn span {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: var(--primary-color);
+  border-radius: 3px;
+  transition: var(--transition);
+}
+
+.mobile-menu-btn.active span:nth-child(1) {
+  transform: translateY(8.5px) rotate(45deg);
+}
+
+.mobile-menu-btn.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-menu-btn.active span:nth-child(3) {
+  transform: translateY(-8.5px) rotate(-45deg);
+}
+
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 80%;
+  max-width: 400px;
+  height: 100vh;
+  background-color: var(--white);
+  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+  padding: 80px 30px 30px;
+  transition: var(--transition);
+  z-index: 1000;
+}
+
+.mobile-menu.active {
+  right: 0;
+}
+
+.mobile-menu ul {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.mobile-menu a {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--dark-color);
+  display: block;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--light-gray);
+}
+
+.mobile-menu a:hover {
+  color: var(--primary-color);
+}
+
+/* Hero Section */
+.hero {
+  background-color: var(--light-color);
+  padding: 150px 0 100px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(0, 167, 157, 0.1) 0%, rgba(247, 148, 29, 0.1) 100%);
+  z-index: 0;
+}
+
+.hero .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+}
+
+.hero-content {
+  flex: 1;
+  z-index: 1;
+}
+
+.hero-content h1 {
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.hero-content h1 span {
+  display: block;
+  color: var(--primary-color);
+  font-size: 0.8em;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  color: var(--text-color);
+  max-width: 600px;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 20px;
+}
+
+.hero-image {
+  flex: 1;
+  position: relative;
+  z-index: 1;
+}
+
+.image-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: var(--box-shadow);
+  transition: var(--transition);
+}
+
+.image-wrapper:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.hero-image img {
+  border-radius: 20px;
+  transition: var(--transition);
+}
+
+.hero-image:hover img {
+  transform: scale(1.05);
+}
+
+.floating-badge {
+  position: absolute;
+  background-color: var(--secondary-color);
+  color: var(--white);
+  padding: 10px 20px;
+  border-radius: 50px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  animation: float 3s ease-in-out infinite;
+}
+
+.floating-badge.top {
+  top: 20px;
+  right: -10px;
+  animation-delay: 0.5s;
+}
+
+.floating-badge.bottom {
+  bottom: 20px;
+  left: -10px;
+  background-color: var(--primary-color);
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.hero-wave {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+/* Features Section */
+.features {
+  background-color: var(--white);
+  position: relative;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.feature-card {
+  background-color: var(--light-color);
+  padding: 40px 30px;
+  border-radius: 20px;
+  text-align: center;
+  transition: var(--transition);
+  box-shadow: var(--box-shadow);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.feature-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  z-index: -1;
+  transition: var(--transition);
+}
+
+.feature-card:hover {
+  transform: translateY(-15px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.feature-card:hover::before {
+  height: 100%;
+  opacity: 0.1;
+}
+
+.feature-icon {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: var(--primary-color);
+  background-color: rgba(0, 167, 157, 0.1);
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin: 0 auto 20px;
+  transition: var(--transition);
+}
+
+.feature-card:hover .feature-icon {
+  background-color: var(--primary-color);
+  color: var(--white);
+  transform: rotateY(360deg);
+}
+
+.feature-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  transition: var(--transition);
+}
+
+.feature-card:hover h3 {
+  color: var(--primary-color);
+}
+
+/* Product Showcase */
+.product-showcase {
+  background-color: var(--light-color);
+  position: relative;
+}
+
+.product-showcase .container {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.product-image {
+  flex: 1;
+}
+
+.product-image .image-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: var(--box-shadow);
+}
+
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.product-image .image-wrapper:hover .image-overlay {
+  opacity: 1;
+}
+
+.zoom-icon {
+  background-color: var(--white);
+  color: var(--primary-color);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  transform: scale(0);
+  transition: var(--transition);
+}
+
+.product-image .image-wrapper:hover .zoom-icon {
+  transform: scale(1);
+}
+
+.product-details {
+  flex: 1;
+}
+
+.product-details h2 {
+  text-align: left;
+}
+
+.product-description {
+  margin-bottom: 30px;
+}
+
+.product-features {
+  margin-bottom: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.product-features li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.product-features li i {
+  color: var(--primary-color);
+  font-size: 1.2rem;
+}
+
+.showcase-wave {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+/* Gallery Section */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.gallery-item {
+  position: relative;
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.gallery-image {
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: var(--box-shadow);
+}
+
+.gallery-image img {
+  transition: var(--transition);
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+}
+
+.gallery-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 167, 157, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.gallery-icon {
+  background-color: var(--white);
+  color: var(--primary-color);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  transform: scale(0);
+  transition: var(--transition);
+}
+
+.gallery-item:hover .gallery-overlay {
+  opacity: 1;
+}
+
+.gallery-item:hover .gallery-icon {
+  transform: scale(1);
+}
+
+.gallery-item:hover .gallery-image img {
+  transform: scale(1.1);
+}
+
+.gallery-caption {
+  text-align: center;
+  margin-top: 15px;
+  font-weight: 500;
+  color: var(--dark-color);
+}
+
+.gallery-item.zoomed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+}
+
+.gallery-item.zoomed .gallery-image {
+  width: 100%;
+  height: 100%;
+  box-shadow: none;
+}
+
+.gallery-item.zoomed img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.gallery-item.zoomed .gallery-overlay,
+.gallery-item.zoomed .gallery-caption {
+  display: none;
+}
+
+/* Specifications Section */
+.specifications {
+  background-color: var(--light-color);
+  position: relative;
+}
+
+.specs-container {
+  display: flex;
+  gap: 50px;
+  justify-content: space-between;
+}
+
+.specs-column {
+  flex: 1;
+}
+
+.specs-card {
+  background-color: var(--white);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: var(--box-shadow);
+  height: 100%;
+  transition: var(--transition);
+}
+
+.specs-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.specs-icon {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 20px;
+}
+
+.specs-card h3 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: var(--primary-color);
+  position: relative;
+  display: inline-block;
+}
+
+.specs-card h3::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background-color: var(--secondary-color);
+  border-radius: 10px;
+}
+
+.specs-card ul li {
+  margin-bottom: 15px;
+  position: relative;
+  padding-left: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.specs-card ul li i {
+  color: var(--primary-color);
+  margin-right: 10px;
+}
+
+.specs-wave {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+/* Testimonials Section */
+.testimonials {
+  background-color: var(--white);
+  position: relative;
+}
+
+.testimonial-slider {
+  display: flex;
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
+.testimonial-card {
+  background-color: var(--light-color);
+  padding: 30px;
+  border-radius: 20px;
+  min-width: 100%;
+  box-shadow: var(--box-shadow);
+  transition: var(--transition);
+  transform: translateX(0);
+}
+
+.testimonial-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.testimonial-avatar {
+  width: 60px;
+  height: 60px;
+  background-color: var(--primary-color);
+  color: var(--white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin-right: 15px;
+}
+
+.testimonial-info h4 {
+  margin-bottom: 5px;
+  font-size: 1.2rem;
+}
+
+.testimonial-info p {
+  margin: 0;
+  color: var(--gray);
+  font-size: 0.9rem;
+}
+
+.stars {
+  color: var(--secondary-color);
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+}
+
+.testimonial-dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  background-color: var(--light-gray);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.dot.active {
+  background-color: var(--primary-color);
+  transform: scale(1.2);
+}
+
+/* Contact Section */
+.contact {
+  background-color: var(--white);
+  position: relative;
+}
+
+.contact .container {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.contact-content {
+  flex: 1;
+}
+
+.price-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.price {
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--primary-color);
+}
+
+.original-price {
+  font-size: 1.8rem;
+  text-decoration: line-through;
+  color: var(--gray);
+  margin-left: 15px;
+}
+
+.discount-tag {
+  display: inline-block;
+  background-color: var(--secondary-color);
+  color: var(--white);
+  padding: 5px 15px;
+  border-radius: 50px;
+  font-weight: 600;
+  margin-left: 15px;
+  animation: pulse 2s infinite;
+}
+
+.shipping-info {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-style: italic;
+  color: var(--gray);
+  margin-bottom: 30px;
+}
+
+.shipping-info i {
+  color: var(--primary-color);
+}
+
+.contact-form {
+  display: grid;
+  gap: 20px;
+}
+
+.form-group {
+  position: relative;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.input-with-icon {
+  position: relative;
+}
+
+.input-with-icon i {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--primary-color);
+}
+
+.input-with-icon input,
+.input-with-icon select {
+  width: 100%;
+  padding: 15px 15px 15px 45px;
+  border: 1px solid var(--light-gray);
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+.input-with-icon input:focus,
+.input-with-icon select:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(0, 167, 157, 0.2);
+  outline: none;
+}
+
+.contact-image {
+  flex: 1;
+}
+
+.guarantee-badge {
+  position: absolute;
+  top: -30px;
+  right: -30px;
+  background-color: var(--secondary-color);
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: rotate(15deg);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  animation: pulse 2s infinite;
+  z-index: 1;
+}
+
+.badge-content {
+  text-align: center;
+  color: var(--white);
+}
+
+.badge-content span {
+  font-size: 2rem;
+  font-weight: 800;
+  display: block;
+  line-height: 1;
+}
+
+.badge-content p {
+  font-size: 0.8rem;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.payment-methods {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.payment-methods p {
+  margin-bottom: 10px;
+  color: var(--gray);
+}
+
+.payment-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  font-size: 2rem;
+  color: var(--dark-color);
+}
+
+/* Footer */
+footer {
+  background-color: var(--dark-color);
+  color: var(--white);
+  padding: 100px 0 20px;
+  position: relative;
+}
+
+.footer-wave {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+  gap: 50px;
+}
+
+.footer-about {
+  flex: 2;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.footer-logo img {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+.footer-logo span {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--white);
+}
+
+.footer-about p {
+  color: var(--light-gray);
+  margin-bottom: 20px;
+}
+
+.footer-social {
+  display: flex;
+  gap: 15px;
+}
+
+.footer-social a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  color: var(--white);
+  transition: var(--transition);
+}
+
+.footer-social a:hover {
+  background-color: var(--primary-color);
+  transform: translateY(-5px);
+}
+
+.footer-links {
+  flex: 3;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-column {
+  flex: 1;
+}
+
+.footer-column h4 {
+  color: var(--white);
+  margin-bottom: 25px;
+  font-size: 1.2rem;
+  position: relative;
+}
+
+.footer-column h4::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 30px;
+  height: 2px;
+  background-color: var(--primary-color);
+}
+
+.footer-column ul li {
+  margin-bottom: 15px;
+}
+
+.footer-column a {
+  color: var(--light-gray);
+  display: flex;
+  align-items: center;
+  transition: var(--transition);
+}
+
+.footer-column a:hover {
+  color: var(--primary-color);
+  transform: translateX(5px);
+}
+
+.footer {
+    background-color: var(--dark-color);
+    padding: 20px 0;
+    text-align: center;
+    color: var(--light-gray);
+}
+
+
+.footer-column a i {
+  margin-right: 10px;
+  font-size: 0.8rem;
+}
+
+.contact-info li {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 15px;
+  color: var(--light-gray);
+}
+
+.contact-info li i {
+  margin-right: 10px;
+  color: var(--primary-color);
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-bottom-links {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-bottom-links a {
+  color: var(--light-gray);
+}
+
+.footer-bottom-links a:hover {
+  color: var(--primary-color);
+}
+
+/* Back to Top Button */
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background-color: var(--primary-color);
+  color: var(--white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--transition);
+  z-index: 999;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.back-to-top.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.back-to-top:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-5px);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+  h1 {
+    font-size: 3rem;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 992px) {
+  section {
+    padding: 80px 0;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  .hero .container,
+  .product-showcase .container,
+  .contact .container {
+    flex-direction: column;
+  }
+
+  .hero-content,
+  .product-details,
+  .contact-content {
+    margin-bottom: 40px;
+  }
+
+  .specs-container {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    gap: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .mobile-menu-btn {
+    display: flex;
+  }
+
+  .hero {
+    padding: 120px 0 80px;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .cta-buttons a {
+    width: 100%;
+  }
+
+  .feature-card {
+    padding: 30px 20px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .footer-bottom-links {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 576px) {
+  section {
+    padding: 60px 0;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  .badge {
+    font-size: 0.7rem;
+  }
+
+  .product-features {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .guarantee-badge {
+    width: 120px;
+    height: 120px;
+    top: -20px;
+    right: -20px;
+  }
+
+  .badge-content span {
+    font-size: 1.5rem;
+  }
+
+  .badge-content p {
+    font-size: 0.7rem;
+  }
+
+  .back-to-top {
+    width: 40px;
+    height: 40px;
+    bottom: 20px;
+    right: 20px;
+  }
+}
+
+
+</style>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/CyGrip%20Logo-nHgPbrY3rkoRFzENUvmOgACT7eq6vQ.png" alt="CYGRIP Logo">
+                    <span>CYGRIP</span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#specs">Specifications</a></li>
+                    <li><a href="https://shopee.ph/Lechg-tools-16pcs-Handy-Tools-Set-i.307852387.8350551908" class="btn-primary">Buy Now</a></li>
+                </ul>
+                <div class="mobile-menu-btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+            <div class="mobile-menu">
+                <ul>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#specs">Specifications</a></li>
+                    <li><a href="#contact" class="btn-primary">Buy Now</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content" data-aos="fade-right" data-aos-duration="1000">
+                <div class="badge">PROFESSIONAL QUALITY</div>
+                <h1>CY2025 <span>Professional Tool Set</span></h1>
+                <p>The complete 16-piece repairing toolkit engineered for professionals and DIY enthusiasts who demand quality and reliability</p>
+                <div class="cta-buttons">
+                    <a href="https://shopee.ph/Lechg-tools-16pcs-Handy-Tools-Set-i.307852387.8350551908" class="btn-primary">
+                        <span>Order Now</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="#features" class="btn-secondary">
+                        <span>Learn More</span>
+                        <i class="fas fa-info-circle"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image" data-aos="fade-left" data-aos-duration="1000">
+                <div class="image-wrapper">
+                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Tools%20in%20Case%20Portrait-8gaygcgOuueIlhNTnmgPtb1LSGG721.png" alt="SR8016 Tool Set in Case">
+                    <div class="floating-badge top">
+                        <i class="fas fa-tools"></i>
+                        <span>16 PCS</span>
+                    </div>
+                    <div class="floating-badge bottom">
+                        <i class="fas fa-star"></i>
+                        <span>Premium</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>Why Choose <span>CY2025</span>?</h2>
+                <p>Designed with precision and built to last, our tool set offers everything you need</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-icon">
+                        <i class="fas fa-toolbox"></i>
+                    </div>
+                    <h3>Complete Set</h3>
+                    <p>16 essential tools for all your repair and maintenance needs in one compact case</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Durable Quality</h3>
+                    <p>Made from high-grade materials for long-lasting performance and reliability</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3>Versatile Use</h3>
+                    <p>Perfect for home repairs, automotive work, and professional applications</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="feature-icon">
+                        <i class="fas fa-suitcase"></i>
+                    </div>
+                    <h3>Portable Design</h3>
+                    <p>Compact carrying case with ergonomic handle for easy transport and storage</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="product-showcase">
+        <div class="container">
+            <div class="product-image" data-aos="fade-right">
+                <div class="image-wrapper">
+                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Tools%20in%20Case%20Landscape-IH0pjvo3mqytIxxtU5m6Tnc1UVLbTV.png" alt="SR8016 Tool Set Open Case">
+                    <div class="image-overlay">
+                        <div class="zoom-icon">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="product-details" data-aos="fade-left">
+                <div class="badge">PREMIUM QUALITY</div>
+                <h2>Everything You Need <span>In One Kit</span></h2>
+                <div class="product-description">
+                    <p>The CY2025 tool set combines professional-grade quality with everyday practicality. Each tool is crafted from premium materials and designed for comfort, durability, and precision.</p>
+                </div>
+                <ul class="product-features">
+                    <li>
+                        <i class="fas fa-check-circle"></i>
+                        <span>7" Combination Pliers</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-check-circle"></i>
+                        <span>8" Adjustable Wrench</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-check-circle"></i>
+                        <span>Digital Electric Tester</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-check-circle"></i>
+                        <span>Tape Measure (2m)</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-check-circle"></i>
+                        <span>Electrical Tape</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-check-circle"></i>
+                        <span>Screwdrivers (Phillips & Flathead)</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-check-circle"></i>
+                        <span>Precision Screwdriver Set</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-check-circle"></i>
+                        <span>Utility Knife</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-check-circle"></i>
+                        <span>Claw Hammer</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-check-circle"></i>
+                        <span>Hex Key Set</span>
+                    </li>
+                </ul>
+                <a href="#contact" class="btn-primary">
+                    <span>Get Yours Today</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>Product <span>Gallery</span></h2>
+                <p>See the CY2025 tool set </p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="gallery-image">
+                        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Tool%20Box-ezTXluG3gnMPUbf6GIKaNbTBozkJLC.png" alt="SR8016 Tool Set Box">
+                        <div class="gallery-overlay">
+                            <div class="gallery-icon">
+                                <i class="fas fa-expand"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-caption">Product Packaging</div>
+                </div>
+                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="gallery-image">
+                        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Tools%20in%20Case%20Landscape-IH0pjvo3mqytIxxtU5m6Tnc1UVLbTV.png" alt="SR8016 Tool Set in Case Landscape">
+                        <div class="gallery-overlay">
+                            <div class="gallery-icon">
+                                <i class="fas fa-expand"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-caption">Complete Tool Set</div>
+                </div>
+                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="gallery-image">
+                        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Tools%20Inclussion-ARRYS5clA4LPP1GNbZW59nHJUic9tN.png" alt="SR8016 Tools Laid Out">
+                        <div class="gallery-overlay">
+                            <div class="gallery-icon">
+                                <i class="fas fa-expand"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-caption">All Tools Included</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="specs" class="specifications">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>Product <span>Specifications</span></h2>
+                <p>Technical details and package contents</p>
+            </div>
+            <div class="specs-container">
+                <div class="specs-column" data-aos="fade-right">
+                    <div class="specs-card">
+                        <div class="specs-icon">
+                            <i class="fas fa-box-open"></i>
+                        </div>
+                        <h3>Package Contents</h3>
+                        <ul>
+                            <li><i class="fas fa-angle-right"></i> 1pc Combination Pliers</li>
+                            <li><i class="fas fa-angle-right"></i> 1pc Adjustable Wrench</li>
+                            <li><i class="fas fa-angle-right"></i> 1pc Digital Electric Tester</li>
+                            <li><i class="fas fa-angle-right"></i> 1pc Tape Measure (2m)</li>
+                            <li><i class="fas fa-angle-right"></i> 1pc Electrical Tape</li>
+                            <li><i class="fas fa-angle-right"></i> 2pcs Screwdrivers</li>
+                            <li><i class="fas fa-angle-right"></i> 5pcs Precision Screwdrivers</li>
+                            <li><i class="fas fa-angle-right"></i> 1pc Screwdriver</li>
+                            <li><i class="fas fa-angle-right"></i> 1pc Utility Knife</li>
+                            <li><i class="fas fa-angle-right"></i> 1pc Claw Hammer</li>
+                            <li><i class="fas fa-angle-right"></i> 1pc Hex Key Set</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="specs-column" data-aos="fade-left">
+                    <div class="specs-card">
+                        <div class="specs-icon">
+                            <i class="fas fa-clipboard-list"></i>
+                        </div>
+                        <h3>Technical Details</h3>
+                        <ul>
+                            <li><i class="fas fa-angle-right"></i> <strong>Model:</strong> CY2025</li>
+                            <li><i class="fas fa-angle-right"></i> <strong>Brand:</strong> CYGRIP</li>
+                            <li><i class="fas fa-angle-right"></i> <strong>Pieces:</strong> 16</li>
+                            <li><i class="fas fa-angle-right"></i> <strong>Case Material:</strong> High-impact plastic</li>
+                            <li><i class="fas fa-angle-right"></i> <strong>Tool Material:</strong> Carbon Steel</li>
+                            <li><i class="fas fa-angle-right"></i> <strong>Handle Material:</strong> Ergonomic rubber grip</li>
+                            <li><i class="fas fa-angle-right"></i> <strong>Case Dimensions:</strong> 27 × 21.5 × 5.5 cm</li>
+                            <li><i class="fas fa-angle-right"></i> <strong>Weight:</strong> 0.750 kg</li>
+                            <li><i class="fas fa-angle-right"></i> <strong>Warranty:</strong> 1 Year</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>What Our <span>Customers Say</span></h2>
+                <p>Real feedback from satisfied customers</p>
+            </div>
+            <div class="testimonial-slider" data-aos="fade-up">
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="testimonial-info">
+                            <h4>danietugado</h4>
+                            <p>2023-03-12 14:39</p>
+                        </div>
+                    </div>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"Salamat seller Ang bilis dumating Isang Araw lng dumating agad amazing ok nman Ang items sana tumagal.....tatagal nman cguro to dipindi sa nagamit.....thank you din sa delivery rader..."</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="testimonial-info">
+                            <h4>laring1111</h4>
+                            <p>2022-06-23 16:13</p>
+                        </div>
+                    </div>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"Thank you seller. Legit at maganda. maayus ang packaging. Mukhang matibay naman po. Wala pong damage. Affordable price."</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="testimonial-info">
+                            <h4>carlamina23</h4>
+                            <p>2023-09-02 08:49</p>
+                        </div>
+                    </div>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <p>"Worth the price Ang mura e kaya ganito rin ang quality So far nakakatulong naman Nagpapasalamat nga ako at meron ito"</p>
+                </div>
+            </div>
+            <div class="testimonial-dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-content" data-aos="fade-right">
+                <div class="badge">LIMITED TIME OFFER</div>
+                <h2>Get Your <span>SR8016</span> Today!</h2>
+                <div class="price-container">
+                    <div class="price">$49.99</div>
+                    <div class="original-price">$79.99</div>
+                    <div class="discount-tag">Save 38%</div>
+                </div>
+                <div class="shipping-info">
+                    <i class="fas fa-truck"></i> Free shipping on all orders
+                    <i class="fas fa-undo-alt"></i> 30-day money-back guarantee
+                </div>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-user"></i>
+                            <input type="text" id="name" placeholder="Enter your full name" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-envelope"></i>
+                            <input type="email" id="email" placeholder="Enter your email address" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-phone"></i>
+                            <input type="tel" id="phone" placeholder="Enter your phone number" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Shipping Address</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <input type="text" id="address" placeholder="Enter your shipping address" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="quantity">Quantity</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                            <select id="quantity" required>
+                                <option value="" disabled selected>Select quantity</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5+</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn-primary">
+                        <span>Order Now</span>
+                        <i class="fas fa-shopping-cart"></i>
+                    </button>
+                </form>
+            </div>
+            <div class="contact-image" data-aos="fade-left">
+                <div class="image-wrapper">
+                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Tool%20Box-ezTXluG3gnMPUbf6GIKaNbTBozkJLC.png" alt="SR8016 Tool Set Box">
+                    <div class="guarantee-badge">
+                        <div class="badge-content">
+                            <span>100%</span>
+                            <p>Satisfaction Guaranteed</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="payment-methods">
+                    <p>Secure Payment Methods:</p>
+                    <div class="payment-icons">
+                        <i class="fab fa-cc-visa"></i>
+                        <i class="fab fa-cc-mastercard"></i>
+                        <i class="fab fa-cc-amex"></i>
+                        <i class="fab fa-cc-paypal"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-wave">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                <path fill="#00a79d" fill-opacity="1" d="M0,288L48,272C96,256,192,224,288,197.3C384,171,480,149,576,165.3C672,181,768,235,864,250.7C960,267,1056,245,1152,224C1248,203,1344,181,1392,170.7L1440,160L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path>
+            </svg>
+        </div>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/CyGrip%20Logo-nHgPbrY3rkoRFzENUvmOgACT7eq6vQ.png" alt="CYGRIP Logo">
+                        <span>CYGRIP</span>
+                    </div>
+                    <p>Providing professional-grade tools for DIY enthusiasts and professionals since 2005. Our mission is to deliver quality, reliability, and value in every product.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="#features"><i class="fas fa-angle-right"></i> Features</a></li>
+                            <li><a href="#gallery"><i class="fas fa-angle-right"></i> Gallery</a></li>
+                            <li><a href="#specs"><i class="fas fa-angle-right"></i> Specifications</a></li>
+                            <li><a href="#contact"><i class="fas fa-angle-right"></i> Order Now</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Support</h4>
+                        <ul>
+                            <li><a href="#"><i class="fas fa-angle-right"></i> FAQ</a></li>
+                            <li><a href="#"><i class="fas fa-angle-right"></i> Shipping Policy</a></li>
+                            <li><a href="#"><i class="fas fa-angle-right"></i> Return Policy</a></li>
+                            <li><a href="#"><i class="fas fa-angle-right"></i> Warranty</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Contact Us</h4>
+                        <ul class="contact-info">
+                            <li><i class="fas fa-envelope"></i> cygrip.handytools2025@gmail.com</li>
+                            <li><i class="fas fa-phone"></i> (+63)991-882-0979</li>
+                            <li><i class="fas fa-clock"></i> Mon-Fri, 9AM-5PM</li>
+                            <li><i class="fas fa-map-marker-alt"></i> JC Aquino Avenue, Butuan City Philippines, 8600</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 CYGRIP HANDY TOOLS. All Rights Reserved.</p>
+                <ul class="footer-bottom-links">
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Sitemap</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <div class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        // Initialize AOS animation library
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const mobileMenu = document.querySelector('.mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenuBtn.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking a link
+        const mobileLinks = document.querySelectorAll('.mobile-menu a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenuBtn.classList.remove('active');
+                mobileMenu.classList.remove('active');
+            });
+        });
+
+        // Back to top button
+        const backToTopBtn = document.querySelector('.back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopBtn.classList.add('show');
+            } else {
+                backToTopBtn.classList.remove('show');
+            }
+        });
+
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Testimonial slider
+        const dots = document.querySelectorAll('.testimonial-dots .dot');
+        const testimonials = document.querySelectorAll('.testimonial-card');
+        
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                // Remove active class from all dots
+                dots.forEach(d => d.classList.remove('active'));
+                // Add active class to current dot
+                dot.classList.add('active');
+                
+                // Calculate the translation value
+                const translateValue = -100 * index + '%';
+                
+                // Apply translation to all testimonial cards
+                testimonials.forEach(card => {
+                    card.style.transform = `translateX(${translateValue})`;
+                });
+            });
+        });
+
+        // Gallery image zoom effect
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        
+        galleryItems.forEach(item => {
+            item.addEventListener('click', () => {
+                // Toggle zoom class
+                item.classList.toggle('zoomed');
+            });
+        });
+    </script>
+</body>
+</html>
